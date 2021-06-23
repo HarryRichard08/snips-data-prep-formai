@@ -1,0 +1,349 @@
+{
+  "entities": {
+    "function": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "Handover"
+        },
+        {
+          "synonyms": [],
+          "value": "Handover completion"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "parameter": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "X2"
+        },
+        {
+          "synonyms": [],
+          "value": "RRC CONNECTION RECONFIGURATION COMPLETE"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "feature": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "feature"
+        },
+        {
+          "synonyms": [],
+          "value": "capacity"
+        },
+        {
+          "synonyms": [],
+          "value": "Locking "
+        },
+        {
+          "synonyms": [],
+          "value": "LTE4265"
+        },
+        {
+          "synonyms": [],
+          "value": "intra LTE S1 handover"
+        },
+        {
+          "synonyms": [],
+          "value": "ANR"
+        },
+        {
+          "synonyms": [],
+          "value": "shutdown "
+        },
+        {
+          "synonyms": [],
+          "value": "frequency "
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "product": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "MME "
+        },
+        {
+          "synonyms": [],
+          "value": "non-GBR"
+        },
+        {
+          "synonyms": [],
+          "value": "MO"
+        },
+        {
+          "synonyms": [],
+          "value": "MIMO active antenna"
+        },
+        {
+          "synonyms": [],
+          "value": "UE"
+        },
+        {
+          "synonyms": [],
+          "value": "MO "
+        },
+        {
+          "synonyms": [],
+          "value": "Beams"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    }
+  },
+  "intents": {
+    "contains": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": ""
+            },
+            {
+              "entity": "function",
+              "slot_name": "function",
+              "text": "Handover"
+            },
+            {
+              "text": " Target and Mode Selection Several types of handover procedures can be applied in LTE depending on the selected HO target cell.To select the applicable procedure it needs to be considered whether: target cell is an LTE cell or a cell of another RAT (for example UTRAN, GERAN,...) target cell is served by own eNodeB or another LTE eNodeB "
+            },
+            {
+              "entity": "parameter",
+              "slot_name": "parameter",
+              "text": "X2"
+            },
+            {
+              "text": " connection to Target eNodeB exists Handover Target selection is executed in two steps. The first step gives the trigger that a HO shall be executed, defines the urgency of the HO and identifies a prioritized list of HO target cells. This is based on measurement reports from the UE but does not consider network internal aspects as for example "
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": ""
+            },
+            {
+              "entity": "function",
+              "slot_name": "function",
+              "text": "Handover completion"
+            },
+            {
+              "text": " After the "
+            },
+            {
+              "entity": "parameter",
+              "slot_name": "parameter",
+              "text": "RRC CONNECTION RECONFIGURATION COMPLETE"
+            },
+            {
+              "text": " message is received in the target eNB , the source eNB releases the radio resource associated with the UE in the source cell after receving S1AP: UE CONTEXT RELEASE COMMAND. Also the RRM of source cell is informed that the UE has been handed over to another cell. The switch from source cell to target cell is seamless for S1 data. In particular, it may neither loose nor destroy any GTP-U PDU."
+            }
+          ]
+        }
+      ]
+    },
+    "requires": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "This "
+            },
+            {
+              "entity": "feature",
+              "slot_name": "feature",
+              "text": "feature"
+            },
+            {
+              "text": " supports "
+            },
+            {
+              "entity": "product",
+              "slot_name": "product",
+              "text": "MME "
+            },
+            {
+              "text": "and S-GW relocation scenarios."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "The high-load cells have more spare "
+            },
+            {
+              "entity": "feature",
+              "slot_name": "feature",
+              "text": "capacity"
+            },
+            {
+              "text": " to cope with statistical traffic fluctuations. This might improve the user satisfaction, for example by means of lower packet delays (GBR traffic) or lower waiting times ("
+            },
+            {
+              "entity": "product",
+              "slot_name": "product",
+              "text": "non-GBR"
+            },
+            {
+              "text": " traffic). Scenario 2: A part of the offered traffic cannot be served: If the high-load cells are overloaded, the handover of cell edge users from high-load to low-load cells allows to serve traffic which could not be served otherwise. To some extent this should improve the cell edge TP and the cell average TP."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": ""
+            },
+            {
+              "entity": "feature",
+              "slot_name": "feature",
+              "text": "Locking "
+            },
+            {
+              "text": "an "
+            },
+            {
+              "entity": "product",
+              "slot_name": "product",
+              "text": "MO"
+            },
+            {
+              "text": " locks all the normal application RUs of the "
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "The "
+            },
+            {
+              "entity": "feature",
+              "slot_name": "feature",
+              "text": "LTE4265"
+            },
+            {
+              "text": ": Split L1 with Fixed Beam Sectorization for 16TRX FDD mMIMO feature is an extension of massive MIMO technology for FDD solution where 16TRX antennas are supported. The LTE4265 feature introduces massive "
+            },
+            {
+              "entity": "product",
+              "slot_name": "product",
+              "text": "MIMO active antenna"
+            },
+            {
+              "text": " (MAA) system where the antennas are placed on the array. They are polarized and grouped in eight columns. This antenna system is activated with the Massive MIMO activation (actMMimo) parameter. One MAA is connected to one AirScale capacity plug-in unit (ABIA) and configured with one carrier. Every cell is transmitting using four virtual antennas in downlink (DL) and receiving using four virtual antennas in uplink (UL). Separating beams enables the creation of an additional cell (directional beam). Beams with the same frequency can be transmitted in different directions, that is +30 and -30 degree in azimuth (in relation to the orientation of the MAA) and 60 degree in width each, which causes the creation of two cells instead of one. Together those cells cover 120 degree area. The beamforming profile is configurable with the massive MIMO horizontal sector beamforming profile (mMimoHorizontalSectorBFProf) parameter.The LTE4265 functionality"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Guard against failure of the "
+            },
+            {
+              "entity": "product",
+              "slot_name": "product",
+              "text": "MME "
+            },
+            {
+              "text": "to respond in preparation phase of "
+            },
+            {
+              "entity": "feature",
+              "slot_name": "feature",
+              "text": "intra LTE S1 handover"
+            },
+            {
+              "text": " 50, 100, ... 2000 ms 500 msBlacklisted cell for intra and inter freq HO listblacklistHoLLNCELThis is a list of blacklisted intra-frequency neighbouring cells for active mode mobility. Cells are identified by their PCI.Blacklisted topologiesblacklistTopoLNCEL\"This parameter is introduced to allow blacklisting for X2-Handover only other HO variants are still allowed If set to \"\"all\"\" the respective entry in blacklistHoL is valid for all kinds of Handover Topology. If set to \"\"onlyX2\"\", handover to the respective entry in blacklistHoL shall only be excluded as targets for X2-based handover but may still be used as target for S1 based handover. This parameter is only evaluated for inter eNodeB target cells which can be used as target for X2-Handover as well as for S1-Handover\"allEqual (0), onlyX2 (1)allEqual (0)blacklistHoL eUTRA carrier frequencyfreqEutraLNCELThis parameter must be configured for an inter-frequency cell. It will be taken as an intra-frequency cell if this parameter is set to ownCarrierFreq0...65535, step 165536blacklistHoL Range of physical cell id rangephyCellIdRangeLNCELIndicates the number of PCIs in the range (including startPCI). If Parameter rangePCI is only one, PCI (startPCI) is specified.n4 (0), n8 (1), n12 (2), n16 (3), n24 (4), n32 (5), n48 (6), n64 (7), n84 (8), n96 (9), n128 (10), n168 (11), n252 (12), n504 (13), noRange (14)-blacklistHoL Start of physical cell id rangephyCellIdStartLNCELIndicates the lowest PCI in the range0...503, step 1-blacklistHoL"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "The LTE10: EPS Bearers for Conversational Voice feature provides EPS bearers for conversational voice which means support for QCI1. This feature needs to be enabled to activate the LTE1127: Service Based Mobility Trigger feature. The LTE55: Inter-Frequency Handover feature provides inter-frequency handover. This is mandatory to activate the LTE1127: Service Based Mobility Trigger feature. The LTE1170: Inter eNodeB Inter-Frequency Load Balancing, LTE1531: Inter-Frequency Load Balancing Extensions, and LTE1387: Intra-eNodeB Inter-Frequency Load Balancing features provide load balancing for inter-frequency targets. These features can be activated in parallel with the LTE1127: Service Based Mobility Trigger feature. However, when QCI1 is established, the targets from the LTE1127 : Service Based Mobility Trigger are used, otherwise tragets from the load balancing are used. The LTE1060: TDD-FDD handover feature needs to be enabled together with the LTE1127: Service Based Mobility Trigger if a FDD-TDD handover is needed for SB HO. The LTE1534: Multi frequency Band Indicator feature provides support for the multi frequency band indicator. It maps EARFCNs according to a MFBI (multi frequency band indicator) profile, when the "
+            },
+            {
+              "entity": "product",
+              "slot_name": "product",
+              "text": "UE"
+            },
+            {
+              "text": " does not support native EARFCN. If it is activated together with the LTE1127: Service Based Mobility Trigger feature, the eNB will also use the MFBI profile and EARFCN mapping if it is needed for SB HO. The LTE872: SRVCC to WCDMA , LTE873: SRVCC to GSM , and LTE738: SRVCC to CDMA2000 1xRTT features can be activated together with the LTE1127: Service Based Mobility Trigger feature, however, the eNB handles them separately. When QCI1 occurs, the eNB tries to use an A4 SB HO target frequency immediately, while SRVCC targets are only used in case A3/A5 or cell HO and coverage-based HO is triggered and WCDMA/GSM/1xRTT is considered as a target RAT for HO. The LTE1469: Dynamic UE measurement configuration feature provides support for dynamic UE measurement configuration - the UE will be configured for specific measurements when this specific measurement should be activated. When LTE1127: Service Based Mobility Trigger is enabled, the eNB will use dynamic UE measurements configuration for SB HO. Main impact is during activation and deactivation, when ongoing calls might be reconfigured with next RRC Reconfiguration message that will be triggered by the eNB. The LTE1406: Extended VoLTE talk time feature provides support for extended VoLTE talk time - when QCI1 is setup and SCell is configured for the UE, then eNB will deconfigure SCell in the UE. If it is activated together with the LTE1127: Service Based Mobility Trigger feature, the eNB will behave according to the LTE1406: Extended VoLTE talk time feature and SCell is deconfigured if needed, when QCI1 is established. The LTE1422: Open Access Home eNB Mobility feature introduces mobility (via redirection) towards Home eNBs. The HeNB targets are excluded as valid targets for SB HO. The LTE1617: RLF Triggered Handover feature provides successful RRC connection reestablishment to unprepared cells (which do not know the UE context). When RLF-triggered HO is performed with the LTE1127: Service Based Mobility Trigger feature enabled and QCI1 established, eNB will not take into account restrictions for SB HO targets (so such HO may lead to a situation, where the UE is moved to target layer not configured as VoLTE preferred). The LTE735: RRC Connection Re-establishment feature provides successful RRC connection reestablishment to prepared cells (which know the UE context). When RRC Reestablishment to serving cell happens with the LTE1127: Service Based Mobility Trigger feature enabled and QCI1 established, the eNB will use same measurements configuration for UE as before reestablishment. When RRC Reestablishment to prepared cell other then serving cell happens with the LTE1127: Service Based Mobility Triggerfeature enabled and QCI1 established, the eNB will handle SB HO actions in the same way as during incoming HO. The LTE490: Subscriber Profile Based Mobility feature provides target differentiation for UEs basing on its SPID values and allows target definitions in Mobility Profiles. This is not a mandatory feature to activate the LTE1127: Service Based Mobility Trigger feature, however if the LTE490: Subscriber Profile Based Mobility feature is disabled, then operator must configure Default Profile instance (MODPR) to allow Service based HO target definition (otherwise activation of the LTE1127: Service Based Mobility Trigger feature will not be possible). If the autoAdapt parameter is set to true in the Default Profile, then the LTE1127: Service Based Mobility Trigger feature target list for SB HO is treated as an empty list. The LTE556: "
+            },
+            {
+              "entity": "feature",
+              "slot_name": "feature",
+              "text": "ANR"
+            },
+            {
+              "text": " Intra-LTE Inter-Frequency UE Based, LTE782: "
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Lock and "
+            },
+            {
+              "entity": "feature",
+              "slot_name": "feature",
+              "text": "shutdown "
+            },
+            {
+              "text": "operations will lead to taking the "
+            },
+            {
+              "entity": "product",
+              "slot_name": "product",
+              "text": "MO "
+            },
+            {
+              "text": "out of use, which may bring the following impacts to the whole system: failure of the on-going callreboot of the nodeinstability of the system Note also that the system does not automatically unlock a locked "
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Separating beams enables the creation of an additional cell (directional beam). "
+            },
+            {
+              "entity": "product",
+              "slot_name": "product",
+              "text": "Beams"
+            },
+            {
+              "text": " with the same "
+            },
+            {
+              "entity": "feature",
+              "slot_name": "feature",
+              "text": "frequency "
+            },
+            {
+              "text": "can be transmitted in different directions, that is +30 and -30 degree in azimuth (in relation to the orientation of the MAA) and 60 degree in width each, which causes the creation of two cells instead of one. Together those cells cover 120 degree area. The beamforming profile is configurable with the massive MIMO horizontal sector beamforming profile (mMimoHorizontalSectorBFProf) parameter.The LTE4265 functionality"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "language": "en"
+}
