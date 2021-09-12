@@ -1,1 +1,1 @@
-# snips-data-prep-formai
+# snips-data-preparation
